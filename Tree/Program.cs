@@ -162,7 +162,6 @@ namespace Tree
 						subdirectories[i].DrawStructure(levelInStructure + 1, placesOfSpecialSigns, specialSignForSubdirectory);
 				}
 			}
-
         }
 
 
