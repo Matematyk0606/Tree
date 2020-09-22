@@ -7,9 +7,9 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Tree
 {
-	public class NumberOfSpecialSignsToDrawExeption : Exception
+	public class NumberOfSpecialSignsToDrawException : Exception
     {
-		public NumberOfSpecialSignsToDrawExeption(string message) : base(message) { }
+		public NumberOfSpecialSignsToDrawException(string message) : base(message) { }
     }
 
 
@@ -77,9 +77,9 @@ namespace Tree
 			try
 			{
 				if (placesOfSpecialSigns.Count >= levelInStructure + 1)
-					throw new NumberOfSpecialSignsToDrawExeption("WYJĄTEK: Ilość równoległych znaków gałęzi do narysowania nie może być większa od levelInStructure-1");
+					throw new NumberOfSpecialSignsToDrawException("WYJĄTEK: Ilość równoległych znaków gałęzi do narysowania nie może być większa od levelInStructure-1");
 			}
-			catch (NumberOfSpecialSignsToDrawExeption ex)
+			catch (NumberOfSpecialSignsToDrawException ex)
 			{
 				Console.ForegroundColor = ConsoleColor.DarkRed;
 				Console.WriteLine(ex.Message);
