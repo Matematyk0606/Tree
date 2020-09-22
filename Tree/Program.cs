@@ -42,18 +42,28 @@ namespace Tree
 		public void RefreshSubdirectories()
 		{
 			subdirectories.Clear();
-			DirectoryInfo [] directoriesInfo = directoryInfo.GetDirectories();
+
+			DirectoryInfo[] directoriesInfo = new DirectoryInfo[] { };
+
+			try { directoriesInfo = directoryInfo.GetDirectories(); }
+			catch (UnauthorizedAccessException ex) { }
+			catch (Exception ex) { }
 
 			foreach (DirectoryInfo directory in directoriesInfo)
 				subdirectories.Add(new DirectoryStructure(directory, typeOfSpecialSigns));
+
 		}
 
 		public void RefreshFiles()
 		{
 			files.Clear();
-			FileInfo[] filesInfo = directoryInfo.GetFiles();
+			FileInfo[] filesInfo = new FileInfo[] { };
 
-			foreach(FileInfo file in filesInfo)
+			try { filesInfo = directoryInfo.GetFiles(); }
+			catch (UnauthorizedAccessException ex) { }
+			catch (Exception ex) { }
+
+			foreach (FileInfo file in filesInfo)
 				files.Add(file.Name);
 		}
 
@@ -182,6 +192,10 @@ namespace Tree
 		static void Main(string[] args)
 		{
 			Console.OutputEncoding = Encoding.UTF8;
+
+			try { Console.SetBufferSize(Console.BufferWidth, 32766); }
+			catch (IOException ex) { }
+			catch (Exception ex) { }
 
 			if (args.Length > 0)
 			{
