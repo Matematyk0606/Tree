@@ -338,3 +338,8 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+
+
+Tree/bin/Debug/netcoreapp3.1/Tree.deps.json
+Tree/bin/Debug/netcoreapp3.1/Tree.runtimeconfig.dev.json
+Tree/bin/Debug/netcoreapp3.1/output.txt
