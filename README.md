@@ -18,8 +18,8 @@ Examples of usage: \
 * `tree.exe [path]`
 
 ## Screenshots
-![Example screenshot](../img/README_screen1.png)
-![Example screenshot](../img/README_screen2.png)
+![Example screenshot](./img/README_screen1.png)
+![Example screenshot](./img/README_screen2.png)
 
 ## Technologies
 * Environment - Visual Studio 2019 (v142)
